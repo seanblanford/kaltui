@@ -1,0 +1,109 @@
+$kt-bg: #101619;
+$kt-panel: #141c20;
+$kt-edge: #34434a;
+$kt-green: #8bd49c;
+$kt-muted: #788690;
+$kt-amber: #e6c384;
+
+Screen {
+    background: $kt-bg;
+    color: #d4dce0;
+    layout: vertical;
+}
+#header {
+    height: 1;
+    background: #202c31;
+}
+#brand { width: 13; color: $kt-green; text-style: bold; }
+#subtitle { width: 1fr; color: $kt-muted; }
+#readonly { width: 12; color: $kt-green; text-style: bold; }
+#clock { width: 18; text-align: right; padding-right: 1; color: $kt-amber; }
+#toolbar { height: 1; margin: 0; }
+.toolbar-label { width: 3; height: 1; color: $kt-green; }
+Input {
+    height: 1;
+    border: none;
+    padding: 0;
+    background: $kt-panel;
+    color: #d4dce0;
+}
+Input:focus { border: none; background: #223238; }
+#filter { width: 1fr; }
+#series { width: 40%; }
+#body { height: 1fr; min-height: 12; }
+#sidebar { width: 26; }
+#workspace { width: 1fr; min-width: 35; overflow-y: auto; }
+#inspector { width: 45; overflow-y: auto; }
+.panel {
+    border: round $kt-edge;
+    border-title-color: $kt-muted;
+    border-title-align: left;
+    background: $kt-panel;
+    padding: 0;
+}
+.panel:focus-within { border: round $kt-green; border-title-color: $kt-green; }
+.panel.active-panel { border: round $kt-green; border-title-color: $kt-green; }
+.panel-actions { dock: top; height: 1; align-horizontal: right; background: $kt-panel; }
+.panel-action { width: 3; min-width: 3; height: 1; min-height: 1; border: none; padding: 0; margin: 0; background: $kt-panel; color: $kt-muted; }
+.panel-action:hover, .panel-action:focus { background: #304c48; color: $kt-green; }
+#overview { height: 17; padding: 0 1; }
+#watchlist-panel { height: 1fr; min-height: 6; }
+#watch-hint { height: auto; padding: 0 1; }
+#watchlist { height: 1fr; }
+#markets-panel { height: 1fr; min-height: 8; }
+#markets { height: 1fr; }
+#market-count { height: 1; color: $kt-muted; padding-left: 1; }
+#account-panel { height: 13; min-height: 7; }
+TabbedContent { height: 1fr; }
+TabbedContent > ContentSwitcher { height: 1fr; }
+TabPane { padding: 0; }
+Tabs { height: 2; }
+Tab { height: 1; padding: 0 1; }
+Underline { height: 1; }
+#account-note { height: 1; color: $kt-amber; padding-left: 1; }
+#contract-panel { height: 18; padding: 0 1; }
+#book-panel { height: 1fr; min-height: 10; }
+#book-label { height: 1; padding-left: 1; }
+#book { height: 1fr; }
+#book-note { height: 2; padding-left: 1; color: $kt-muted; }
+#tape-panel { height: 10; }
+#tape { height: 1fr; }
+DataTable {
+    background: $kt-panel;
+    scrollbar-size: 1 1;
+    padding: 0;
+}
+DataTable > .datatable--header { background: #202c31; color: $kt-muted; text-style: none; }
+DataTable > .datatable--odd-row { background: $kt-panel; }
+DataTable > .datatable--even-row { background: #172126; }
+DataTable > .datatable--cursor { background: #2b4145; color: #e4efe8; text-style: bold; }
+DataTable:focus > .datatable--cursor { background: #304c48; }
+DataTable > .datatable--hover { background: #24363b; }
+#status { height: 1; background: #182226; }
+Footer { height: 1; background: #202c31; }
+Footer > .footer--key { background: #2c3c40; color: $kt-green; }
+Footer > .footer--description { color: $kt-muted; }
+.muted { color: $kt-muted; }
+InfoScreen { align: center middle; background: #000000 65%; }
+#dialog {
+    width: 85%; max-width: 100; height: auto; max-height: 85%;
+    border: round $kt-green; background: $kt-panel; padding: 1 2;
+    border-title-color: $kt-green;
+}
+.narrow #sidebar { display: none; }
+.narrow #inspector { width: 40; }
+.narrow #subtitle { display: none; }
+.narrow #brand { width: 1fr; }
+.stacked #body, .tiny #body { layout: vertical; overflow-y: auto; }
+.stacked #sidebar { display: none; }
+.stacked #workspace, .tiny #workspace { width: 100%; height: 26; min-height: 16; }
+.stacked #inspector, .tiny #inspector { width: 100%; height: 25; layout: horizontal; }
+.stacked #contract-panel, .tiny #contract-panel { width: 1fr; height: 100%; }
+.stacked #book-panel, .tiny #book-panel { width: 1fr; height: 100%; }
+.stacked #tape-panel, .tiny #tape-panel { display: none; }
+.tiny #series { width: 45%; }
+.tiny #readonly { width: 10; }
+
+.panel-expanded #body { layout: horizontal; }
+.panel-expanded #sidebar, .panel-expanded #workspace, .panel-expanded #inspector { width: 1fr; height: 1fr; layout: vertical; }
+.panel-expanded .panel { width: 100% !important; height: 1fr !important; }

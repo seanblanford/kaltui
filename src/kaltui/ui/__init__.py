@@ -1,0 +1,1 @@
+"""Compact Textual dashboard components."""
